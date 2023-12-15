@@ -1,16 +1,16 @@
 from django.db import models
 
-# Create your models here.
-class BaseModel (models.Model):
-    id = models.AutoField(primary_key=True)
+
+class BaseModel(models.Model):
     created_at = models.DateTimeField(
         auto_now_add=True, db_index=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        abstract= True
-    
-class Trainer (BaseModel):
+        abstract = True
+
+
+class Trainer(BaseModel):
     name = models.CharField(max_length=100, null=True, blank=True)
     birthdate = models.DateField(null=True, blank=True)
     location = models.CharField(max_length=250, null=True, blank=True)
@@ -19,11 +19,13 @@ class Trainer (BaseModel):
     def __str__(self):
         return self.name
 
-class PokemonCard (BaseModel):
+
+class PokemonCard(BaseModel):
     RARITY_CHOICES = (
         ('Common', 'Common'),
         ('Uncommon', 'Uncommon'),
         ('Rare', 'Rare'),
+
     )
     CARDTYPE_CHOICES = (
         ('Fire', 'Fire'),
@@ -59,30 +61,16 @@ class PokemonCard (BaseModel):
     evolution_stage = models.CharField(max_length=250, null=True, blank=True)
     abilities = models.CharField(max_length=250, null=True, blank=True)
 
-    def create_pokemon_cards(self):
-        print(
-            f"Name: {self.name}\n"
-            f"Rarity: {self.rarity}\n"
-            f"HP: {self.hp}\n"
-            f"Card Types: {(self.card_type)}\n"
-            f"Attack: {self.attack}\n"
-            f"Description: {self.description}\n"
-            f"Weakness: {(self.weakness)}\n"
-            f"Card Number: {self.card_number}\n"
-            f"Release Date: {self.release_date}\n"
-            f"Evolution Stage: {self.evolution_stage}\n"
-            f"Special Abilities: {(self.abilities)}"
-        )
+    def __str__(self):
+        return self.name
 
-    def create_trainers(self):
-        print(
-            f"Name: {self.name}\n"
-            f"Age: {self.birthdate}\n"
-            f"Location: {self.location}\n"
-            f"Email: {self.email}"
-        )
 
-class Collection (BaseModel):
-    card = models.ForeignKey (PokemonCard, blank=True, null=True, on_delete=models.CASCADE)
-    trainer = models.ForeignKey (Trainer, blank=True, null=True, on_delete=models.CASCADE)
+class Collection(BaseModel):
+    card = models.ForeignKey(PokemonCard, blank=True,
+                             null=True, on_delete=models.CASCADE)
+    trainer = models.ForeignKey(
+        Trainer, blank=True, null=True, on_delete=models.CASCADE)
     collection_date = models.DateField()
+
+    def __str__(self):
+        return f"{self.card} {self.collection_date}"
