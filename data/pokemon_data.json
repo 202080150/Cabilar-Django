@@ -65,10 +65,6 @@
       "image_url": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/023.png"
     },
     {
-      "name": "Pikachu",
-      "image_url": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png"
-    },
-    {
       "name": "Sandshrew",
       "image_url": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/027.png"
     },
@@ -80,5 +76,6 @@
       "name": "Clefairy",
       "image_url": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/035.png"
     }
+    
   ]
 }

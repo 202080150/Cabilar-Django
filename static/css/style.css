@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
   font-family: 'Roboto Slab';
 }
 
@@ -78,15 +79,14 @@ footer {
   margin: 1%;
   display: flex;
   justify-content: center;
-
-  /* align-items: center; */
+  flex-direction: column;
+  align-items: center; 
 }
 
 .trainers-container table {
   border-collapse: collapse;
   background-color: white;
   border: 2px solid #dddddd;
-  
 }
 
 .trainers-container th,
@@ -120,6 +120,7 @@ footer {
   margin: 1%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -192,6 +193,7 @@ footer {
   margin: 1%;
   text-align: center;
   font-size: 12px;
+  padding-bottom: 160px;
 }
 
 .card-box {
@@ -485,6 +487,7 @@ footer {
 }
 
 /* Pagination */
+
 .pagination {
   display: flex;
   justify-content: center;
@@ -498,15 +501,15 @@ footer {
 
 .page-link {
   display: block;
-  padding: 5px 10px;
+  padding: 10px 20px;
   text-decoration: none;
-  border: 1px solid #dee2e6;
-  color: #007bff;
+  border: 2px solid #0f1010;
+  color: #15181b;
   background-color: #fff;
 }
 
 .page-link:hover {
-  background-color: #f0f0f0;
+  background-color: #f05353;
 }
 
 /* Adjusted selectors to accommodate classes with spaces */
@@ -526,6 +529,8 @@ footer {
   border-color: #007bff;
   z-index: 3;
 }
+
+/* Social Icons for footer */
 
 .social-icons a {
   color: white;
